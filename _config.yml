@@ -4,8 +4,8 @@ title: MrRice Blog # your site title
 #项目中的  relative_url   相当于 prepend: site.baseurl
 #baseurl: "/blog" #本地
 #baseurl: "/" #线上
-url: "https://mrrice.top"
-#url: "https://mrrice996.github.io/mrrice2.github.io/"
+#url: "https://mrrice.top"
+url: "https://mrrice996.github.io/mrrice2.github.io/"
 
 # SEO PLUGIN
 #social:
