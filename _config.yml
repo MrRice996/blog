@@ -1,0 +1,65 @@
+# SITE CONFIGURATION
+title: MrRice # your site title
+#baseurl 直接注释调的话  在本地和线上都正常，但是如果打开  则会冲突，本地的/blog可以访问 但是到线上要  /
+#项目中的 xxx | relative_url   相当于xxx | prepend baseurl
+#baseurl: "/blog" #本地
+#baseurl: "/" #线上
+url: "https://janczizikow.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+# SEO PLUGIN
+#social:
+#  name: Your Name
+#  links:
+#    - https://twitter.com/BenBalter
+#    - https://www.facebook.com/ben.balter
+#    - https://www.linkedin.com/in/BenBalter
+#    - https://plus.google.com/+BenBalter
+#    - https://github.com/benbalter
+#    - https://keybase.io/benbalter
+
+tagline: Java is the best language in the world
+email: mailTo:mrrice1202@163.com
+github: https://github.com/MrRice996
+hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+
+# THEME SETTINGS
+navigation: # Navigation links
+  - {name: 'Home', link: '/'}
+  - {name: 'About', link: '/about'}
+  - {name: 'Contact', link: '/contact'}
+
+disqus:
+  shortname: janczizikow # to enable comments replace with your_disqus_shortname
+
+# google_tag_manager: GTM-XXXXXXX # Uncomment to enable GTM. Replace GTM-XXXXXXX with your GTM container ID
+
+#Service Worker 的缓存技术  但是开启后有些报错，应该还没配置好
+service_worker: false
+
+# BUILD SETTINGS
+#markdown: kramdown
+#highlighter: rouge # or pygments or null
+# theme: jekyll-sleek # Uncomment if you're using the theme as a ruby gem
+
+#转换时排除某些文件、文件夹
+exclude:
+  - README.md
+  - node_modules
+  - script
+  - package.json
+  - Gemfile.lock
+  - vendor
+  - npm-debug.log
+  - gulpfile.js
+  - sleek.jpg
+
+#include: ['_pages']
+#permalink: /:title/
+
+#详情查看 compress.html
+compress_html:
+  clippings: all
+
+#plugins:
+#  - jekyll-sitemap
+#  - jekyll-seo-tag
