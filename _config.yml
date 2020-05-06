@@ -4,7 +4,7 @@ title: MrRice # your site title
 #项目中的 xxx | relative_url   相当于xxx | prepend baseurl
 #baseurl: "/blog" #本地
 #baseurl: "/" #线上
-url: "https://janczizikow.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mrrice996.github.io/mrrice2.github.io/"
 
 # SEO PLUGIN
 #social:
