@@ -2,11 +2,10 @@
 title: MrRice Blog # your site title
 #baseurl 直接注释调的话  在本地和线上都正常，但是如果打开  则会冲突，本地的/blog可以访问 但是到线上要  /
 #relative_url: "/blog"
-baseurl: "/blog"
+#baseurl: "/blog"
 #url:  http://localhost:4000 #本地,可以不配置,会默认根据web url来
-#url: "https://mrrice996.github.io/mrrice2.github.io"
-url: "https://mrrice996.github.io"
-#url: "http://mrrice.top"
+#url: "https://mrrice996.github.io"
+url: "http://mrrice.top"
 
 # SEO PLUGIN
 #social:
