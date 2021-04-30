@@ -4,8 +4,9 @@ title: MrRice Blog # your site title
 #项目中的  relative_url   相当于 prepend: site.baseurl
 #baseurl: "/blog" #本地
 #baseurl: "/" #线上
-url: "https://mrrice.top"
-#url: "https://mrrice996.github.io/mrrice2.github.io/"
+#url:  http://localhost:4000 #本地,可以不配置,会默认根据web url来
+#url: "http://mrrice.top"
+url: "https://mrrice996.github.io/mrrice2.github.io/"
 
 # SEO PLUGIN
 #social:
@@ -48,7 +49,6 @@ exclude:
   - node_modules
   - script
   - package.json
-  - Gemfile.lock
   - vendor
   - npm-debug.log
   - gulpfile.js

@@ -4,7 +4,6 @@
 _site
 _img/posts/*.jpg
 _img/posts/*.png
-Gemfile.lock
 .idea/*
 npm-debug.log
 *.js.map
