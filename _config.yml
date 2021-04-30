@@ -6,7 +6,7 @@ title: MrRice Blog # your site title
 #baseurl: "/" #线上
 #url:  http://localhost:4000 #本地,可以不配置,会默认根据web url来
 #url: "http://mrrice.top"
-url: "https://mrrice996.github.io/mrrice2.github.io/"
+url: "https://mrrice996.github.io/mrrice2.github.io"
 
 # SEO PLUGIN
 #social:
