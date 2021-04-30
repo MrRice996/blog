@@ -3,9 +3,9 @@ title: MrRice Blog # your site title
 #baseurl 直接注释调的话  在本地和线上都正常，但是如果打开  则会冲突，本地的/blog可以访问 但是到线上要  /
 #relative_url: "/blog"
 #baseurl: "/blog"
-#url:  http://localhost:4000 #本地,可以不配置,会默认根据web url来
+#url:  http://localhost:4000 #本地,可以不配置
 #url: "https://mrrice996.github.io"
-url: "http://mrrice.top"
+#url: "http://mrrice.top"
 
 # SEO PLUGIN
 #social:
@@ -18,7 +18,7 @@ url: "http://mrrice.top"
 #    - https://github.com/benbalter
 #    - https://keybase.io/benbalter
 
-tagline: Java is the best language in the world
+tagline: Code is as elegant as poetry
 email: mailTo:mrrice1202@163.com
 github: https://github.com/MrRice996
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
