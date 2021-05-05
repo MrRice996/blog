@@ -2,7 +2,8 @@
 layout: post
 title: linux安装mysql_8
 summary: linux安装mysql_8的记录及遇到的一些问题
-featured-img: sleek
+featured-img: pink_girl
+categories: [Linux, Record]
 mathjax: true
 ---
 
@@ -20,7 +21,6 @@ tar -xvf mysql-8.0.20-linux-glibc2.12-x86_64
 
 **3.移动并重命名**
 ```no-highlight
-个人习惯会将执行文件放到/usr/local 目录下
 mv mysql-8.0.20-linux-glibc2.12-x86_64 /usr/local/mysql
 ```
 
@@ -46,7 +46,7 @@ useradd -r -g mysql mysql （useradd -r 创建系统用户 -g 为用户分配组
 
 **8.初始化后会有个随机密码**
 ```no-highlight
-[Server] A temporary password is generated for root@localhost: nj91U8dyk6-I
+A temporary password is generated for root@localhost: nj91U8dyk6-I
 例如这个就是：nj91U8dyk6-I
 ```
 
@@ -64,19 +64,29 @@ service mysql start
 ```no-highlight
 登录：
 mysql -u root -p 输入前面获得的初始密码
+```
 
+```no-highlight
 修改密码：
 alter user user() identified by "xxx";
+```
 
+```no-highlight
 设置密码不过期：
 ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
+```
 
+```no-highlight
 给root开启远程访问权限：
 use mysql select User，authentication_string，Host from user;
+```
 
+```no-highlight
 配置远程访问：
 update user set host = '%' where user = 'root';
+```
 
+```no-highlight
 刷新权限：
 flush privileges;
 ```
@@ -88,7 +98,7 @@ flush privileges;
 
 ```no-highlight
 初始化失败：
-./mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory
+error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory
 
 解决：
 安装缺少的东西，yum install -y libaio-devel.x86_64
@@ -97,7 +107,7 @@ flush privileges;
 **2.mysql安装目录默认是/usr/local/mysql，如果更改了路径，或者mysql名字带版本号时（mysql-8.0.20）**
 ```no-highlight
 收到如下错误：
-./support-files/mysql.server: line 276: cd: /usr/local/mysql: No such file or directoryStarting MySQLCouldn't find MySQL`
+support-files/mysql.server: line 276: cd: /usr/local/mysql: No such file or directoryStarting MySQLCouldn't find MySQL`
 server (/usr/local/mysql/[FAILED]ld_safe)        
    
 解决：
@@ -141,27 +151,27 @@ mysqld这个不行就用这个service mysqld status
 
 ### 拓展
 
-**查看版本**
 ```no-highlight
+查看版本
 mysql --version
 ```
 
-**启动服务**
 ```no-highlight
+启动服务
 systemctl start mysqld
 ```
 
-**停止服务**
 ```no-highlight
+停止服务
 systemctl stop mysqld
 ```
 
-**重启服务**
 ```no-highlight
+重启服务
 systemctl restart mysqld
 ```
 
-**查看服务状态**
 ```no-highlight
+查看服务状态
 systemctl status mysqld
 ```
