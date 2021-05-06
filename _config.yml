@@ -31,7 +31,7 @@ navigation: # Navigation links
 # 分页
 gems: [ jekyll-paginate ]
 # 每页有几个项目
-paginate: 9
+paginate: 1
 paginate_path: "page:num"
 pageName: page
 
