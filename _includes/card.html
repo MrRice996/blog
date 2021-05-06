@@ -1,9 +1,9 @@
 <div class="post-card" itemprop="blogPosts" itemscope="" itemtype="http://schema.org/BlogPosting">
-    {% if post.categories %}
-    {% assign categories = post.categories %}
+    {% if post.labels %}
+    {% assign labels = post.labels %}
     <span class="post-card__label">
-      {% for category in categories %}
-        <a href="{{site.baseurl}}/categories/#{{category|slugize}}" class="label"> {{ category }} </a>
+      {% for label in labels %}
+        <a href="{{site.baseurl}}/labels/{{label|slugize}}" class="label"> {{ label }} </a>
         {% unless forloop.last %}&nbsp;{% endunless %}
       {% endfor %}
     </span>
