@@ -21,7 +21,7 @@ title: MrRice Blog # your site title
 tagline: Code is as elegant as poetry
 email: mailTo:mrrice1202@163.com
 github: https://github.com/MrRice996
-hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: posts/sleek_sm.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
 # THEME SETTINGS
 navigation: # Navigation links
