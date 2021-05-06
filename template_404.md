@@ -6,4 +6,6 @@ permalink: 404.html
 
 Ups... Something went wrong. Go back to the Home Page and start over!
 
-[Go to the Home Page](/{{ site.url }})
+[Go to the Home Page](/)
+
+[comment]: <> ([Go to the Home Page]&#40;/{{ site.url }}&#41;)
