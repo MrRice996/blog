@@ -101,7 +101,7 @@ gulp.task( "critical", done => {
       width: 1280,
       height: 960
     } ],
-    dest: "../_includes/critical.css",
+    dest: "../assets/css/critical.css",
     minify: true,
     extract: false,
     ignore: [ "@font-face" ]
