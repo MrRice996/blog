@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div id="expandZone" class="expand">
+                <div id="expandZone" class="expand" style="display: none">
                     <div class="download">
                         <div id="androidItem" class="item">
                             <div class="download-list">
@@ -49,8 +49,6 @@
 
     <script>
         $(function () {
-            $(".expand").hide();
-
             $("#openMenu").mouseover(function () {
                 $(".expand").show();
             });
