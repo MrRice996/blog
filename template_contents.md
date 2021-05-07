@@ -5,7 +5,7 @@ permalink: /contents/
 ---
 
 <div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
-    {% for post in site.posts %}
-    {% include card.html %}
+    {% for label in site.labels %}
+    {% include /contents/labels_card.html %}
     {% endfor %}
 </div>

@@ -28,6 +28,12 @@ navigation: # Navigation links
   - { name: '主页', link: '/' }
   - { name: '目录', link: '/contents' }
 
+#自定义标签 k:名字 v:图片路径
+labels:
+  - { k: 'Linux', v: '' }
+  - { k: 'Record', v: '203933.jpg' }
+
+
 # 分页
 gems: [ jekyll-paginate ]
 # 每页有几个项目

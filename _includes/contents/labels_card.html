@@ -1,0 +1,19 @@
+<div style="min-height:0" class="post-card" itemprop="blogPosts" itemscope="" itemtype="http://schema.org/BlogPosting">
+
+    <span class="post-card__label">
+        <a href="{{site.baseurl}}/labels/{{label.k}}" class="label"> {{ label.k }} </a>
+    </span>
+
+    <a href="{{ label.v }}">
+        <figure class="post-card__thumb">
+            {% if label.v != empty %}
+            <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/{{label.v}}" class="lazyload blur"
+                 alt="{{post.title}}"/>
+            {% else %}
+            <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/backiee.jpg" class="lazyload blur"
+                 alt="{{post.title}}"/>
+            {% endif %}
+        </figure>
+    </a>
+</div>
+
