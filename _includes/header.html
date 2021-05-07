@@ -1,42 +1,16 @@
-<script src="{{'/assets/js/jquery.min.js'}}"></script>
-
 <header class="header" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
     <div class="container">
-
         <div class="header__inner">
-            <nav id="navList" class="header__links">
-
+            <a class="header__logo" href="{{ '/' | relative_url }}">
+                {% include /logo/logo.svg %}
+            </a>
+            <nav class="header__links">
                 <div class="container header__links-wrapper">
-                    <!--<div class="header__links-wrapper">-->
-                    <a class="header__logo" href="{{ '/' | relative_url }}">
-                        {% include /logo/logo.svg %}
+                    {% for item in site.navigation %}
+                    <a class="header__link" href="{{ item.link | relative_url }}" itemprop="url">
+                        <span itemprop="name">{{ item.name }}</span>
                     </a>
-
-                    <div class="header_labels">
-                        {% for item in site.navigation %}
-                        {% if item.link == '/' %}
-                        <a class="header__link" href="{{ item.link }}" itemprop="url"> {{ item.name }}</a>
-                        {% else %}
-                        <a id="openMenu" class="header__link" itemprop="url"> {{ item.name }}</a>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div id="expandZone" class="expand" style="display: none">
-                    <div class="download">
-                        <div id="androidItem" class="item">
-                            <div class="download-list">
-                                <a href="http://www.lanrenzhijia.com/" class="btn zj" id="download-link"><span
-                                        class="icon"></span><span class="text">直接下载安装包</span></a>
-                                <a href="http://www.lanrenzhijia.com/" class="btn sjgj"
-                                   id="tencent_app_assistant_btn"><span class="icon"></span><span
-                                        class="text">手机管家一键下载</span></a>
-                                <a href="http://www.lanrenzhijia.com/" class="btn wdj"><span class="icon"></span><span
-                                        class="text">豌豆荚一键下载</span></a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </nav>
             <div class="header__toggle">
@@ -46,23 +20,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(function () {
-            $("#openMenu").mouseover(function () {
-                $(".expand").show();
-            });
-            $(".expand").mouseover(function () {
-                $(".expand").show();
-            });
-
-            $("#openMenu").mouseout(function () {
-                $(".expand").hide();
-            });
-            $(".expand").mouseout(function () {
-                $(".expand").hide();
-            });
-        });
-    </script>
-
 </header>
