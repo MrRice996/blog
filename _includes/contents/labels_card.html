@@ -1,12 +1,12 @@
 <div style="min-height:0" class="post-card" itemprop="blogPosts" itemscope="" itemtype="http://schema.org/BlogPosting">
 
     <span class="post-card__label">
-        <a href="{{site.baseurl}}/labels/{{label.k}}" class="label"> {{ label.k }} </a>
+        <a href="{{site.baseurl}}/labels/{{label.k}}" class="label"> {{ label }} </a>
     </span>
 
     <a href="{{ label.v }}">
         <figure class="post-card__thumb">
-            {% if label.v != empty %}
+            {% if label == empty %}
             <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/{{label.v}}" class="lazyload blur"
                  alt="{{post.title}}"/>
             {% else %}
@@ -17,3 +17,18 @@
     </a>
 </div>
 
+<!--
+这语法真难用,跟狗屎一样恶心 呕,呕,呕,tui
+官方有个map可以直接拿到对象里的所有key值对应的v作为数组,但是当v里是数组时,他会转成str放入新的数组,这就很恶心!
+所以这个map的使用场景,必须是k对应的v都是str
+用法:{% assign list = site.posts | map: "labels" %}
+
+所以为了拿到文章里的所有label,不得不双重循环,用capture接收
+这里是恶心的第二点:
+    liquid没有数组add的概念,也可能是我没找到?
+    所以用capture接收成str,最后根据空格(split: " ")转换数组
+    数组去重(uniq)又变成了str,用逗号分割
+    最后再根据空格转换数组
+恶心吧!!!!  绕来绕去的
+不说liquid是否有提供数组,就去重来说居然会变成str? 这他妈就离谱
+-->
