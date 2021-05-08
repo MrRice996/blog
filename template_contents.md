@@ -1,10 +1,10 @@
 ---
 layout: page 
-title: 目录 
+title: 标签
 permalink: /contents/
 ---
 
-<div class="post-list" style="padding-top: 20px;" itemscope="" itemtype="http://schema.org/Blog">
+<div class="post-list" style="padding-top: 20px;" itemscope="">
 {% capture labels = "" %}
     {% for postss in site.posts %}
         {% for plabel in postss.labels %}
@@ -18,4 +18,4 @@ permalink: /contents/
 {% for label in list %}
     {% include /contents/labels_card.html %}
 {% endfor %}
-</div>
+</div> 

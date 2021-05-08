@@ -26,7 +26,7 @@ hero_img: posts/sleek_sm.jpg # Main background image: use the path from /assets/
 # THEME SETTINGS
 navigation: # Navigation links
   - { name: '主页', link: '/' }
-  - { name: '目录', link: '/contents' }
+  - { name: '标签', link: '/contents' }
 
 #自定义标签 k:名字 v:图片路径
 labels:
