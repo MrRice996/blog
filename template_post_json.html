@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /post.json
+---
+[
+{% for post in site.posts %}
+    {
+        "title": {{ post.title | jsonify }},
+        "summary": {{ post.summary | jsonify }},
+        "url": {{ post.url | jsonify }},
+        "labels": {{ post.labels | jsonify }},
+        "date": {{ post.date | jsonify }},
+        "tags": {{ post.tags | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
