@@ -32,7 +32,7 @@ layout: compress
 <main class="site__content">
     <section class="blog">
         <div class="container">
-            <div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
+            <div class="post-list" itemscope="" >
                 {% for post in paginator.posts %}
                 {% include card.html %}
                 {% endfor %}
