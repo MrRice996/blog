@@ -18,6 +18,20 @@
 </div>
 
 <!--
+ capture labels = ""
+     for postss in site.posts
+         for plabel in postss.labels
+             labels | append: plabel
+         endfor
+     endfor
+ endcapture
+ assign list = labels | split: " "
+ assign list = list | uniq | join: ","
+ assign list = list | split: ","
+ for label in list
+     include /contents/labels_card.html
+ endfor
+
 这语法真难用,跟狗屎一样恶心 呕,呕,呕,tui
 官方有个map可以直接拿到对象里的所有key值对应的v作为数组,但是当v里是数组时,他会转成str放入新的数组,这就很恶心!
 所以这个map的使用场景,必须是k对应的v都是str
@@ -31,4 +45,15 @@
     最后再根据空格转换数组
 恶心吧!!!!  绕来绕去的
 不说liquid是否有提供数组,就去重来说居然会变成str? 这他妈就离谱
+
+优化成这种  concat 拼接数组
+ for postss in site.posts
+     assign labels = labels | concat: postss.labels
+ endfor
+
+ assign list = labels | uniq | join: ","
+ assign list = list | split: ","
+ for label in list
+ include /contents/labels_card.html
+ endfor
 -->
