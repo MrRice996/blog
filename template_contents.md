@@ -4,7 +4,7 @@ title: 目录
 permalink: /contents/
 ---
 
-<div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
+<div class="post-list" style="padding-top: 20px;" itemscope="" itemtype="http://schema.org/Blog">
 {% capture labels = "" %}
     {% for postss in site.posts %}
         {% for plabel in postss.labels %}
