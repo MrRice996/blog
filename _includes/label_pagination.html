@@ -1,0 +1,110 @@
+<script src="{{'/assets/js/jquery.min.js'}}"></script>
+
+<ul id="box" class="pagination">
+
+</ul>
+
+<script>
+
+    $(function () {
+        let now = 1;
+        let total = 0;
+        let page = 0;
+        let pageSize = 1;
+
+        getjson("/post.json", function (datas) {
+
+            for (let i = 0; i < datas.length; i++) {
+                let obj = datas[i];
+                console.log(obj.labels);
+                console.log(obj.labels.indexOf('Linux'));
+                let result = obj.labels.indexOf('Linux');
+                if (result > -1) {
+                    total++;
+                }
+
+            }
+        });
+
+        console.log("total:" + total);
+
+
+        $('#box').append('' +
+            '   <li>\n' +
+            '        <a href="javascript:;" href="###" onclick="clickHome()">\n' +
+            '            <span>首页</span>\n' +
+            '        </a>\n' +
+            '    </li>\n' +
+
+            '    <li>\n' +
+            '        <!--当前页为第一页时,点击无效-->\n' +
+            '        {% if paginator.page == 1 %}\n' +
+            '        <span>&laquo;</span>\n' +
+            '        <!--否则-->\n' +
+            '        {% else %}\n' +
+            '        <!--上一页为第一页时,跳到首页-->\n' +
+            '        {% if paginator.previous_page == 1 %}\n' +
+            '        <a href="{{ site.baseurl}}/">\n' +
+            '            {% else %}\n' +
+            '            <!--否则 跳到上一页-->\n' +
+            '            <a href="{{ site.baseurl}}/{{site.pageName}}{{ paginator.previous_page }}">\n' +
+            '                {% endif %}\n' +
+            '                <span>&laquo;</span>\n' +
+            '            </a>\n' +
+            '            {% endif %}\n' +
+            '        </a>\n' +
+            '    </li>' +
+            '');
+
+        for (let i = 1; i <= 3; i++) {
+            if (now === i) {
+                $('#box').append('<li class="active"><a>' + i + '</a></li>');
+            } else {
+                $('#box').append('<li><a>' + i + '</a></li>');
+            }
+
+        }
+
+        $('#box').append('    <li>\n' +
+            '        <!--当前页等于总页数(下一页等于最后一页)时,点击无效-->\n' +
+            '        {% if paginator.page == paginator.total_pages %}\n' +
+            '        <span>&raquo;</span>\n' +
+            '        <!--否则执行,下一页-->\n' +
+            '        {% else %}\n' +
+            '        <a href="{{ site.baseurl}}/{{site.pageName}}{{ paginator.next_page }}">\n' +
+            '            <span>&raquo;</span>\n' +
+            '        </a>\n' +
+            '        {% endif %}\n' +
+            '    </li>\n' +
+            '\n' +
+            '    <li>\n' +
+            '        {% if 1 == paginator.total_pages %}\n' +
+            '        <a href="{{ site.baseurl}}/">\n' +
+            '            <span>末页</span>\n' +
+            '        </a>\n' +
+            '        {% else %}\n' +
+            '        <a href="{{ site.baseurl}}/{{site.pageName}}{{paginator.total_pages}}">\n' +
+            '            <span>末页</span>\n' +
+            '        </a>\n' +
+            '        {% endif %}\n' +
+            '    </li>' +
+            '');
+
+
+    });
+
+    function clickHome() {
+        console.log(1);
+    }
+
+    function getjson(url, func) {
+        $.ajaxSettings.async = false;
+        $.getJSON(url, function (data) {
+            if (data) {
+                if (typeof func == 'function') {
+                    func(data);
+                }
+            }
+        });
+    }
+</script>
