@@ -164,12 +164,12 @@ permalink: /labels/Linux/
         var pageHtml = '';
         $('#box').empty();
 
-        pageHtml += '<li><a href="javascript:;" href="###" onclick="clickHome()"><span>首页</span></a></li>';
+        pageHtml += '<li><a href="javascript:;" onclick="clickHome()"><span>首页</span></a></li>';
 
         if (now == 1) {
             pageHtml += '<li><span>&laquo;</span></li>';
         } else {
-            pageHtml += '<li><a href="javascript:;" href="###" onclick="previousPage()"><span>&laquo;</span></a></li>';
+            pageHtml += '<li><a href="javascript:;" onclick="previousPage()"><span>&laquo;</span></a></li>';
         }
 
         var start = now;
@@ -187,7 +187,7 @@ permalink: /labels/Linux/
             if (now === i) {
                 pageHtml += '<li class="active"><a>' + i + '</a></li>';
             } else {
-                pageHtml += '<li><a href=\"javascript:;\" href="###"  onclick="getPageData(' + i + ')">' + i + '</a></li>';
+                pageHtml += '<li><a href=\"javascript:;\"  onclick="getPageData(' + i + ')">' + i + '</a></li>';
             }
         }
 
@@ -196,13 +196,13 @@ permalink: /labels/Linux/
             pageHtml += '<li><span>&raquo;</span></li>';
         } else {
             pageHtml += '<!--否则执行,下一页-->';
-            pageHtml += '<li><a href="javascript:;" href="###" onclick="nextPage()"><span>&raquo;</span></a></li>';
+            pageHtml += '<li><a href="javascript:;" onclick="nextPage()"><span>&raquo;</span></a></li>';
         }
 
         if (1 == pageNum) {
             pageHtml += '<li><span>末页</span></li>';
         } else {
-            pageHtml += '<li><a href="javascript:;" href="###" onclick="clickLast()"><span>末页</span></a></li>';
+            pageHtml += '<li><a href="javascript:;" onclick="clickLast()"><span>末页</span></a></li>';
         }
 
         $('#box').append(pageHtml);
