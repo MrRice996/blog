@@ -1,0 +1,223 @@
+---
+layout: page
+title: Nginx
+permalink: /labels/Nginx/
+---
+
+<script src="{{'/assets/js/jquery.min.js'}}"></script>
+
+<style>
+    .post-card__header h2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; /*行数*/
+    }
+
+    .post-card__inner p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; /*行数*/
+    }
+</style>
+
+<div id="post-list" style="padding-top: 20px;" class="post-list" itemscope="">
+</div>
+
+
+<ul id="box" class="pagination">
+
+</ul>
+
+<script>
+    let pageSize;
+    let label = 'Nginx';
+
+    var maps = {};
+    var list = [];
+    var handleDatas = [];
+
+    let previous = 0;
+    let now = 1;
+    let next = 2;
+
+    let total = 0;
+    let pageNum = 0;
+    let pageNumList = [];
+
+    $(function () {
+        let z = 1;
+        getjson("/post.json", function (data) {
+            pageSize = data.pageSize;
+            for (let i = 0; i < data.data.length; i++) {
+                let obj = data.data[i];
+                let labels = obj.labels;
+                let result = labels.indexOf(label);
+                if (result > -1) {
+                    total++;
+                    handleDatas.push(obj);
+                }
+            }
+            pageNum = Math.ceil(total / pageSize);
+            for (let i = 0; i < pageNum; i++) {
+                pageNumList.push(i + 1);
+            }
+
+            for (let i = 0; i < handleDatas.length; i++) {
+                let obj = handleDatas[i];
+                list.push(obj);
+                if (pageSize > total) {
+                    if (list.length >= total) {
+                        maps[z++] = list;
+                        list = [];
+                    }
+                } else {
+                    if (list.length >= pageSize || z == pageNum) {
+                        maps[z++] = list;
+                        list = [];
+                    }
+                }
+            }
+            getPageData(now);
+        });
+
+    });
+
+    function clickHome() {
+        getPageData(1)
+    }
+
+    function clickLast() {
+        getPageData(pageNum)
+    }
+
+    function previousPage() {
+        now = previous;
+        getPageData(now)
+    }
+
+    function nextPage() {
+        now = next;
+        getPageData(now)
+    }
+
+    function getPageData(nowPage) {
+        now = nowPage;
+        previous = now - 1;
+        next = now + 1;
+
+        for (map in maps) {
+            var key = map;
+            var value = maps[map];
+            if (key == nowPage) {
+                var cardHtml = '';
+                $('#post-list').empty();
+
+                for (let i = 0; i < value.length; i++) {
+                    let obj = value[i];
+                    cardHtml += '<div class="post-card" itemprop="blogPosts" itemscope="">';
+                    cardHtml += '<span class="post-card__label">';
+                    for (let j = 0; j < obj.labels.length; j++) {
+                        if (j == obj.labels.length - 1) {
+                            cardHtml += '<a href="{{site.baseurl}}/labels/' + obj.labels[j] + '" class="label"> ' + obj.labels[j] + ' </a>';
+                        } else {
+                            cardHtml += '<a href="{{site.baseurl}}/labels/' + obj.labels[j] + '" class="label"> ' + obj.labels[j] + ' </a> &nbsp;&nbsp;';
+                        }
+                    }
+                    cardHtml += '</span>';
+
+                    cardHtml += '<a href="' + obj.url + '">';
+                    if (obj.featuredImg != null && obj.featuredImg != '') {
+                        cardHtml += '<figure class="post-card__thumb">';
+                        cardHtml += '<img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/' + obj.featuredImg + '.jpg" class="lazyload blur" alt="{{post.title}}"/>';
+                        cardHtml += '</figure>';
+                    } else {
+                        cardHtml += '<figure class="post-card__thumb">';
+                        cardHtml += '<div class="dark-bg"></div>';
+                        cardHtml += '</figure>';
+                    }
+                    cardHtml += '</a>';
+
+                    cardHtml += '<a class="post-card__inner" href="' + obj.url + '">';
+                    cardHtml += '<div class="post-card__header">';
+                    cardHtml += '<h2>' + obj.title + '</h2>';
+                    cardHtml += '<span class="post-card__meta">';
+                    cardHtml += '<time>' + obj.date.substring(0, 10) + '</time>';
+                    cardHtml += '</span>';
+                    cardHtml += '</div>';
+                    cardHtml += '<p>' + obj.summary + '</p>';
+                    cardHtml += '</a>';
+                    cardHtml += '</div>';
+                    $('#post-list').append(cardHtml);
+                    cardHtml = '';
+                }
+            }
+        }
+
+        getPageButton();
+    }
+
+    function getPageButton() {
+        var pageHtml = '';
+        $('#box').empty();
+
+        pageHtml += '<li><a href="javascript:;" onclick="clickHome()"><span>首页</span></a></li>';
+
+        if (now == 1) {
+            pageHtml += '<li><span>&laquo;</span></li>';
+        } else {
+            pageHtml += '<li><a href="javascript:;" onclick="previousPage()"><span>&laquo;</span></a></li>';
+        }
+
+        var start = now;
+        var end = pageNumList[now + 1];
+        if (pageNum > 2) {
+            if (now > pageNum - 3) {
+                end = pageNum;
+                start = pageNum - 2;
+            }
+        } else {
+            end = pageNum;
+        }
+
+        for (let i = start; i <= end; i++) {
+            if (now === i) {
+                pageHtml += '<li class="active"><a>' + i + '</a></li>';
+            } else {
+                pageHtml += '<li><a href=\"javascript:;\"  onclick="getPageData(' + i + ')">' + i + '</a></li>';
+            }
+        }
+
+        if (now == pageNum) {
+            pageHtml += '<!--当前页等于总页数(下一页等于最后一页)时,点击无效-->';
+            pageHtml += '<li><span>&raquo;</span></li>';
+        } else {
+            pageHtml += '<!--否则执行,下一页-->';
+            pageHtml += '<li><a href="javascript:;" onclick="nextPage()"><span>&raquo;</span></a></li>';
+        }
+
+        if (1 == pageNum) {
+            pageHtml += '<li><span>末页</span></li>';
+        } else {
+            pageHtml += '<li><a href="javascript:;" onclick="clickLast()"><span>末页</span></a></li>';
+        }
+
+        $('#box').append(pageHtml);
+        window.scrollTo(0, 0);
+    }
+
+    function getjson(url, func) {
+        $.ajaxSettings.async = false;
+        $.getJSON(url, function (data) {
+            if (data) {
+                if (typeof func == 'function') {
+                    func(data);
+                }
+            }
+        });
+    }
+
+</script>
