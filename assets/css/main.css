@@ -823,6 +823,22 @@ button:disabled:hover, button:disabled :focus {
     margin-bottom: 0.75rem
 }
 
+.post-card__header h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /*行数*/
+}
+
+.post-card__inner p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /*行数*/
+}
+
 .post-card__meta {
     font-size: 0.875rem
 }
