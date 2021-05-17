@@ -2,19 +2,19 @@
 layout: post
 title: linux安装mysql_8
 summary: linux安装mysql_8的记录及遇到的一些问题
-featured-img: 283818
-labels: [Linux, Mysql]
+featured-img: 283818.jpg
+labels: [Linux, 安装记录]
 ---
 
 ### 流程
 
 **1.wget下载**
-```
+```no-highlight
 wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz
 ```
 
 **2.解压**
-```
+```no-highlight
 tar -xvf mysql-8.0.20-linux-glibc2.12-x86_64
 ```
 

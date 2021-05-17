@@ -114,7 +114,7 @@ permalink: /labels/Mysql/
                     cardHtml += '<a href="' + obj.url + '">';
                     if (obj.featuredImg != null && obj.featuredImg != '') {
                         cardHtml += '<figure class="post-card__thumb">';
-                        cardHtml += '<img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/' + obj.featuredImg + '.jpg" class="lazyload blur" alt="{{post.title}}"/>';
+                        cardHtml += '<img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/' + obj.featuredImg + '" class="lazyload blur" alt="{{post.title}}"/>';
                         cardHtml += '</figure>';
                     } else {
                         cardHtml += '<figure class="post-card__thumb">';

@@ -11,7 +11,7 @@
     <a href="{{ post.url | relative_url }}">
         {% if post.featured-img %}
         <figure class="post-card__thumb">
-            <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/{{post.featured-img}}.jpg" class="lazyload blur"
+            <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/{{post.featured-img}}" class="lazyload blur"
                  alt="{{post.title}}"/>
         </figure>
         {% else %}

@@ -108,7 +108,7 @@ var precacheConfig =
             "67f40708f69ab671cee04d624258b85c"
         ],
         [
-            "/assets/img/posts/emile-perron-190221_sm.jpg",
+            "/assets/img/posts/190221.jpg",
             "4ce4178a62d5a456e90e7bc47bde50f5"
         ],
         [
