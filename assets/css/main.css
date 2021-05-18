@@ -1639,7 +1639,32 @@ table th, table td {
     align-items: flex-start
 }
 
-.controls__item span {
+/*  >=62em(992px)的设备  1em=16px  */
+@media (min-width: 62em) {
+    .myMobile {
+        display:none;
+        visibility: hidden;
+    }
+
+    .myPc {
+        display:inline;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 62em) {
+    .myMobile {
+        display:inline;
+        visibility: visible;
+    }
+
+    .myPc {
+        display:none;
+        visibility: hidden;
+    }
+}
+
+.controls__item .span {
     font-size: 0.875rem;
     color: #838c8d
 }

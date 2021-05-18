@@ -7,7 +7,6 @@ labels: [Linux, 安装记录]
 ---
 
 ### 流程
-
 **1.安装各种依赖**
 ```no-highlight
 #gcc安装，nginx源码编译需要
@@ -62,8 +61,9 @@ mv nginx-1.16.1 /usr/local/nginx
 /usr/local/nginx/sbin/nginx
 ```
 
-### 拓展
+<br>
 
+### 拓展
 ```no-highlight
 启动服务
 /usr/local/nginx/sbin/nginx
@@ -101,6 +101,7 @@ cd /etc
 chmod 755 rc.local
 ```
 
+<br>
 
 ### 遇到的问题
 **1.配置https的时候报错**

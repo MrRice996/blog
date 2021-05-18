@@ -90,9 +90,9 @@ update user set host = '%' where user = 'root';
 flush privileges;
 ```
 
+<br>
 
 ### 遇到的问题:
-
 **1.在初始化mysql的时候，初始化失败**    
 
 ```no-highlight
@@ -148,8 +148,9 @@ cp /usr/local/mysql/support-files/mysql.server
 mysqld这个不行就用这个service mysqld status
 ```
 
-### 拓展
+<br>
 
+### 拓展
 ```no-highlight
 查看版本
 mysql --version
