@@ -829,7 +829,24 @@ button:disabled:hover, button:disabled :focus {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /*行数*/
+    /*height: 72px;*/
+    /*-webkit-line-clamp: 2; !*行数*!*/
+}
+
+
+/*  >=62em(992px)的设备  1em=16px  */
+@media (min-width: 62em) {
+    .post-card__header h2 {
+        height: 72px;
+        /*-webkit-line-clamp: 2; !*行数*!*/
+    }
+}
+
+@media (max-width: 62em) {
+    .post-card__header h2 {
+        /*height: 72px;*/
+        -webkit-line-clamp: 2; /*行数*/
+    }
 }
 
 .post-card__inner p {
@@ -1532,7 +1549,12 @@ table th, table td {
 
 .hero__wrap .hero__title {
     font-size: 1.8em;
-    color: #fff
+    color: #fff;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*display: -webkit-box;*/
+    /*-webkit-box-orient: vertical;*/
+    /*-webkit-line-clamp: 2;*/
 }
 
 .hero__tagline {

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 看mybatis-plus源码<br>解决List&lt;泛型&gt;字段映射问题
-summary: 
+title: mybatis-plus List&lt;泛型&gt;字段映射问题
+summary: 开发的过程中，个人不太喜欢创建过多的数据库表，所以有一些简单的外键关联表的场景时， 我都会习惯于将外键id放在类的属性中List&lt;Long&gt;或者
 featured-img: 273138.jpg
 labels: [mybatis, mybatis-plus]
 ---
