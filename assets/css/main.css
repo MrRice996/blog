@@ -1541,11 +1541,11 @@ table th, table td {
     z-index: 1
 }
 
-@media only screen and (min-width: 48em) {
-    .hero__wrap {
-        max-width: 40em
-    }
-}
+/*@media only screen and (min-width: 48em) {*/
+/*    .hero__wrap {*/
+/*        max-width: 40em*/
+/*    }*/
+/*}*/
 
 .hero__wrap .hero__title {
     font-size: 1.8em;
