@@ -3,7 +3,7 @@ layout: post
 title: linux安装nginx
 summary: linux安装nginx的记录及拓展
 featured-img: 203933.jpg
-labels: [Linux, 安装记录]
+labels: [linux, 安装记录]
 ---
 
 ### 流程
