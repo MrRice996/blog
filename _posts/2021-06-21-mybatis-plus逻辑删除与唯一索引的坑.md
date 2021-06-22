@@ -1,7 +1,7 @@
 ---
 layout: post
 title: mybatis-plus逻辑删除与唯一索引的坑
-summary: 一直都听说单元测试是非常重要的模块，所以今天尝试着去配置了一下，在这记录配置相关介绍及后续带来的思考
+summary: 记一次mybatis-plus逻辑删除与唯一索引的填坑记录
 featured-img: 292859.jpg
 labels: [记录]
 ---
