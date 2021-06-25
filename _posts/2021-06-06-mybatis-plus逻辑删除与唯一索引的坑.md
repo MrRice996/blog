@@ -2,7 +2,7 @@
 layout: post
 title: mybatis-plus逻辑删除与唯一索引的坑
 summary: 记一次mybatis-plus逻辑删除与唯一索引的填坑记录
-featured-img: 292859.jpg
+featured-img: 205659.jpg
 labels: [记录]
 ---
 

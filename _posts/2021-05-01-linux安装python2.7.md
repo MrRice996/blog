@@ -2,7 +2,7 @@
 layout: post
 title: linux安装python2.7
 summary: linux安装python2.7的记录及拓展
-featured-img: 189039.jpg
+featured-img: 212737.jpg
 labels: [linux, 安装记录]
 ---
 

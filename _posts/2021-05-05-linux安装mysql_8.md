@@ -2,7 +2,7 @@
 layout: post
 title: linux安装mysql_8
 summary: linux安装mysql_8的记录及遇到的一些问题
-featured-img: 283818.jpg
+featured-img: 212737.jpg
 labels: [linux, 安装记录]
 ---
 

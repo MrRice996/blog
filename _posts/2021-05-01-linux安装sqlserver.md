@@ -2,7 +2,7 @@
 layout: post
 title: linux安装sqlserver
 summary: linux安装sqlserver的记录及拓展
-featured-img: 223254.jpg
+featured-img: 212737.jpg
 labels: [linux, 安装记录]
 ---
 
