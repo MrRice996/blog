@@ -257,8 +257,6 @@ body {
     background-color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 1rem;
-    line-height: 2;
-    letter-spacing:1px;
     color: #343851;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%
@@ -1606,6 +1604,8 @@ table th, table td {
 }
 
 .post-content {
+    line-height: 2;
+    letter-spacing:1px;
     max-width: 52.5rem;
     margin: 0 auto;
     padding-top: 2.5em
