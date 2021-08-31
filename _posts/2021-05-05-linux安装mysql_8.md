@@ -177,7 +177,7 @@ mysql5.7.18之后的版本就不需要再路径/etc下面配置my.cnf文件就�
 !includedir /etc/my.cnf.d
 
 解决思路提供
-可查看mysqlshell脚本（mysql.server）理解启动、关闭、重启时执行了什么，例如
+可查看mysqlshell脚本（/usr/local/mysql/support-files/mysql.server）理解启动、关闭、重启时执行了什么，例如
 启动时，会将进程放在pid文件，文件名叫什么，路径在哪，默认会从my.cnf读取，没有cnf又如何执行等
 
 如果my.cnf指定了相关路径，则需给到mysql的相关的权限（读、写、执行）
